@@ -1,0 +1,49 @@
+// Sidebar toggler
+.nav-icon {
+  position: absolute;
+  top: 30px;
+  width: 25px;
+  height: 25px;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  outline: none;
+  cursor: pointer;
+  z-index: 900;
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #5ab3f0;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+    &:nth-child(1) {
+      top: 0px;
+    }
+    &:nth-child(2) {
+      top: 7px;
+    }
+    &:nth-child(3) {
+      top: 14px;
+    }
+  }
+  &.open {
+    span {
+      &:nth-child(1) {
+        top: 9px;
+        transform: rotate(135deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+      &:nth-child(3) {
+        top: 9px;
+        transform: rotate(-135deg);
+      }
+    }
+  }
+}

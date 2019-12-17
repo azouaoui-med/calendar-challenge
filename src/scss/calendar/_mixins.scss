@@ -1,0 +1,24 @@
+// mixins for the event and tag styles used to avoid redondancy
+@mixin event($color) {
+  background-color: $color;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: -3px 1px 30px rgba(42, 34, 64, 0.14);
+}
+@mixin event-fill($color) {
+  font-weight: bold;
+  background-color: rgba($color, 0.08);
+  color: $color;
+  border-color: $color;
+  border-left: 4px solid $color;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+@mixin tag($color) {
+  background-color: $color !important;
+  border: none !important;
+}
+@mixin tag-fill($color) {
+  background-color: rgba($color, 0.08) !important;
+  border: 2px solid $color !important;
+}

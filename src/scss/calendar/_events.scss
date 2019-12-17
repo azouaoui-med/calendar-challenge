@@ -1,0 +1,58 @@
+$event-primary: #346ff1;
+$event-success: #58cb7d;
+$event-warning: #fd9b5b;
+
+.event {
+  font-family: Montserrat;
+  height: 29px;
+  line-height: 29px;
+  font-size: 12px;
+  padding: 0 14px;
+  letter-spacing: -0.19px;
+  margin-bottom: 4px;
+
+  &.event-primary-fill {
+    @include event($event-primary);
+  }
+  &.event-success-fill {
+    @include event($event-success);
+  }
+  &.event-warning-fill {
+    @include event($event-warning);
+  }
+  &.event-primary {
+    @include event-fill($event-primary);
+  }
+  &.event-success {
+    @include event-fill($event-success);
+  }
+  &.event-warning {
+    @include event-fill($event-warning);
+  }
+}
+
+.tag {
+  height: 30px;
+  width: 30px;
+  border-radius: 50% !important;
+  margin: 5px;
+
+  &.event-primary-fill {
+    @include tag($event-primary);
+  }
+  &.event-success-fill {
+    @include tag($event-success);
+  }
+  &.event-warning-fill {
+    @include tag($event-warning);
+  }
+  &.event-primary {
+    @include tag-fill($event-primary);
+  }
+  &.event-success {
+    @include tag-fill($event-success);
+  }
+  &.event-warning {
+    @include tag-fill($event-warning);
+  }
+}

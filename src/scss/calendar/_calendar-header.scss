@@ -1,0 +1,68 @@
+.calendar-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  margin-bottom: 22px;
+  > * {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    @media (max-width: 768px) {
+      flex-grow: 1;
+    }
+    &:nth-child(2) {
+      padding: 0 15px;
+    }
+  }
+  .navigation {
+    display: flex;
+    .label {
+      font-family: Montserrat;
+      font-size: 16px;
+      font-weight: bold;
+      letter-spacing: -0.1px;
+      text-align: center;
+      color: #292529;
+      padding: 0 8px;
+    }
+    a {
+      &.arrow-right {
+        img {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  .view-switcher {
+    a {
+      text-decoration: none;
+      padding: 13px 27px;
+      font-family: Montserrat;
+      font-size: 14px;
+      font-weight: normal;
+      letter-spacing: -0.09px;
+      text-align: center;
+      color: #a8b2b9;
+      border: solid 1px #efefef;
+      &.active {
+        background-color: #ffffff;
+        box-shadow: 0 8px 16px 0 rgba(74, 144, 226, 0.15);
+        border: solid 1px #ffffff;
+        font-weight: bold;
+        color: #5ab3f0;
+      }
+      &:first-child {
+        border-right: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      &:last-child {
+        border-left: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+    }
+  }
+}

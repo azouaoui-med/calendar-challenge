@@ -1,0 +1,13 @@
+.oval {
+  width: 40px;
+  height: 40px;
+  background-color: #5ab3f0;
+  box-shadow: -2px 4px 14px rgba(90, 179, 240, 0.6);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  transform: translateY(50%);
+}

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import './partials/sidebar-toggler';
+@import './partials/sidebar';
+@import './partials/oval';
+
+$sidebar-width: 224px;
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  height: 100vh;
+  > div,
+  > div .App {
+    height: 100%;
+  }
+}
+
+// Organize page layout
+.wrapper {
+  height: 100%;
+  display: flex;
+  .sidebar {
+    left: -$sidebar-width;
+    width: $sidebar-width;
+  }
+  main {
+    position: relative;
+    height: 100vh;
+    margin-left: 0;
+    flex-grow: 1;
+    padding: 60px;
+    background-color: #fbfbfc;
+    transition: margin-left 0.3s ease;
+    overflow-y: auto;
+    @media (max-width: 768px) {
+      padding: 30px;
+    }
+  }
+  &.open {
+    .sidebar {
+      left: 0;
+    }
+    main {
+      margin-left: $sidebar-width;
+      @media (max-width: 768px) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    opacity: 0.7;
+    display: none;
+    background: #000;
+  }
+  &.open {
+    .overlay {
+      display: block;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

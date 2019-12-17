@@ -1,0 +1,92 @@
+@import './mixins';
+@import './events';
+@import './search';
+@import './calendar-header';
+
+// overlap default calendar styles to fit with the requested style
+.calendar {
+  position: relative;
+  height: 100%;
+  min-height: 675px;
+  .rbc-header {
+    height: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-family: Montserrat;
+      font-size: 10px;
+      letter-spacing: 0.21px;
+      color: #cfd5da;
+      text-transform: uppercase;
+    }
+  }
+  .rbc-month-view,
+  .rbc-header,
+  .rbc-day-bg,
+  .rbc-month-row {
+    border-color: #efefef;
+  }
+  .rbc-label {
+    font-size: 14px;
+    letter-spacing: -0.22px;
+    color: #8a888a;
+  }
+  .rbc-date-cell {
+    a {
+      margin-right: 7px;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      font-size: 14px;
+      letter-spacing: -0.22px;
+      color: #8a888a;
+      line-height: 30px;
+      border-radius: 50%;
+    }
+    &.rbc-now {
+      a {
+        color: #ffffff;
+        background-color: #5ab3f0;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .rbc-day-slot {
+    .rbc-event-label {
+      display: none;
+    }
+    .rbc-event {
+      border: none;
+    }
+    .event {
+      line-height: 20px;
+    }
+  }
+
+  .rbc-today {
+    background-color: transparent;
+  }
+  .rbc-day-bg.rbc-off-range-bg {
+    background-color: #f8f7f8;
+  }
+
+  .rbc-row-content {
+    margin-top: 16px;
+  }
+  .rbc-month-row {
+    overflow: unset;
+  }
+
+  .rbc-month-view {
+    background: #fff;
+  }
+
+  .rbc-event {
+    transform: translateX(10px);
+    background-color: transparent;
+    padding: 0;
+  }
+}

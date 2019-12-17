@@ -1,0 +1,85 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  box-shadow: -8px 0 42px 0 rgba(42, 34, 64, 0.14);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+  .logo {
+    text-align: center;
+    margin: 54px 0 39px 0;
+  }
+  .profile {
+    text-align: center;
+    margin-bottom: 23px;
+    .picture {
+      margin-bottom: 17px;
+    }
+    .username {
+      font-size: 14px;
+      letter-spacing: -0.25px;
+      color: #8a888a;
+    }
+  }
+  .menu {
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        a {
+          position: relative;
+          display: flex;
+          text-decoration: none;
+          padding: 20px 21px;
+          color: #a8b2b9;
+          text-transform: uppercase;
+          font-size: 12px;
+          font-weight: bold;
+          letter-spacing: 0.51px;
+          img {
+            margin-right: 23px;
+          }
+          &.active {
+            color: #292529;
+            img {
+              filter: saturate(8);
+            }
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 6px;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              box-shadow: 3px 0 9px 0 rgba(108, 163, 255, 0.43);
+              background-color: #6ca3ff;
+            }
+          }
+        }
+      }
+    }
+  }
+  // sidebar footer
+  .copy {
+    font-family: Montserrat;
+    font-size: 10px;
+    letter-spacing: -0.15px;
+    text-align: center;
+    color: rgba(41, 37, 41, 0.23);
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-transform: uppercase;
+    span {
+      display: inline-block;
+      padding: 46px 0;
+    }
+  }
+}
