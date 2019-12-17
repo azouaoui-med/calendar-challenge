@@ -41,6 +41,7 @@ const EventModal = ({ show, closeModal, event, handleChange, handleSave }) => {
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Event title</Form.Label>
               <Form.Control
+                data-testid="titleInput"
                 type="text"
                 placeholder="Enter event title"
                 value={event.title}
@@ -52,6 +53,7 @@ const EventModal = ({ show, closeModal, event, handleChange, handleSave }) => {
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Event start date</Form.Label>
               <Form.Control
+                data-testid="startInput"
                 type="date"
                 value={moment(event.start).format('YYYY-MM-DD')}
                 onChange={e =>
@@ -65,6 +67,7 @@ const EventModal = ({ show, closeModal, event, handleChange, handleSave }) => {
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Event end date</Form.Label>
               <Form.Control
+                data-testid="endInput"
                 type="date"
                 value={moment(event.end).format('YYYY-MM-DD')}
                 onChange={e => handleChange({ ...event, end: e.target.value })}
@@ -94,7 +97,11 @@ const EventModal = ({ show, closeModal, event, handleChange, handleSave }) => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button
+            data-testid="closeModal"
+            variant="secondary"
+            onClick={handleClose}
+          >
             Close
           </Button>
           <Button variant="primary" onClick={handleSave}>

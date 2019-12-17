@@ -4,6 +4,10 @@ This is a code for the callendar challenge built with react
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Demo
+
+[See it live](https://calendar-challenge.netlify.com/#!)
+
 ## Installation
 
 Install dependencies :
