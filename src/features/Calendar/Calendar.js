@@ -37,6 +37,22 @@ const BigCalendar = () => {
     setShowModal(true);
   };
 
+  /**
+   * This function will be called when the Oval button is clicked
+   */
+  const hanldeOvalClick = () => {
+    setevent(intialEvent);
+    setShowModal(true);
+  };
+
+  /**
+   * This function wil be called when selecting an exisiting event
+   */
+  const handleSelectEvent = selectdEvent => {
+    setevent(selectdEvent);
+    setShowModal(true);
+  };
+
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -46,8 +62,12 @@ const BigCalendar = () => {
    */
   const handleSaveEvent = () => {
     const eventsToSave = [...events];
-    if (event.id) eventsToSave[event.id] = event;
-    else eventsToSave.push({ ...event, id: events.length + 1 });
+    if (event.id) {
+      const index = eventsToSave.findIndex(
+        eventItem => eventItem.id === event.id,
+      );
+      eventsToSave[index] = event;
+    } else eventsToSave.push({ ...event, id: events.length + 1 });
     setEvents(eventsToSave);
     setShowModal(false);
   };
@@ -87,12 +107,13 @@ const BigCalendar = () => {
         events={events}
         style={{ height: '100%' }}
         onEventDrop={handleEventDrop}
+        onSelectEvent={handleSelectEvent}
         components={{
           event: Event,
           toolbar: Toolbar,
         }}
       />
-      <Oval handleClick={() => setShowModal(true)} />
+      <Oval handleClick={hanldeOvalClick} />
       <EventModal
         closeModal={handleCloseModal}
         show={showModal}
